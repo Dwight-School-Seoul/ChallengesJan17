@@ -568,5 +568,33 @@ public class Functions {
         }
     }
 
+    public static void countStringLength(){
+
+        Scanner lengthScanner = new Scanner(System.in);
+
+        while(true){
+            System.out.print("\n > Enter a String: ");
+            String myString = lengthScanner.next();
+            int stringLength = myString.length();
+            System.out.println("\n > The length of \""+myString+"\" is " + stringLength+ " characters long ");
+            System.out.println("\n> The String in Upper Case \""+myString.toUpperCase()+"\"");
+            System.out.println("> The String in Lower Case \""+myString.toLowerCase()+"\"");
+
+            while (true){
+                System.out.print("\n > Enter another String? <y/n> ...");
+                String lengthOption = lengthScanner.next();
+                if (lengthOption.equals("y")){
+                    break;
+                }else if (lengthOption.equals("n")){
+                    System.out.println("> Quitting");
+                    return;
+                }else{
+                    System.out.println("> Error - \""+lengthOption+"\" Not Fount! ");
+                }
+            }
+        }
+    }
+
+
 
 } // main class

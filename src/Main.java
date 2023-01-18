@@ -1,16 +1,24 @@
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 public class Main {
     public static void main(String[] args) {
 
-        Functions.greetingUser();
-        Functions.ageCalcTill90Years();
-        Functions.BMICalc();
-        Functions.tipCalc();
-        Functions.charCount();
-        Functions.magic8ball();  // Magic 8 Ball using if statement
-        Functions.magic8ballV2(); // Magic 8 Ball using Array
+        final JFrame parent = new JFrame();
+        JButton button = new JButton();
 
-        // More Function in Functions.java
+        button.setText("Click me to show dialog!");
+        parent.add(button);
+        parent.pack();
+        parent.setVisible(true);
 
+        button.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                String name = JOptionPane.showInputDialog(parent,
+                        "What is your name?", null);
+            }
+        });
 
     } //void main
 } // main Class
