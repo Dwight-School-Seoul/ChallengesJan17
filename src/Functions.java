@@ -1,7 +1,9 @@
-import java.util.Scanner;
+import java.util.*;
 import java.lang.Math;
-import java.util.Random;
 import java.text.DecimalFormat;
+import javax.swing.*;
+import static javax.swing.JOptionPane.*;
+
 
 public class Functions {
 
@@ -111,7 +113,7 @@ public class Functions {
             Random ran = new Random();
             int x = ran.nextInt(20);
             System.out.println("\nType Your Question Here... ");
-            String question = playScanner.nextLine();
+            playScanner.nextLine();
 
             if (x==0) {
                 System.out.println("Magic8Ball ->  It is certain");
@@ -281,13 +283,13 @@ public class Functions {
     public static void storyGen(){
         Scanner storyScanner = new Scanner(System.in);
 
-        System.out.print("Enter a noun: ");
+        System.out.print("noun: ");
         String noun = storyScanner.nextLine();
-        System.out.print("Enter a verb: ");
+        System.out.print("verb: ");
         String verb = storyScanner.nextLine();
-        System.out.print("Enter an adverb: ");
+        System.out.print("adverb: ");
         String adverb = storyScanner.nextLine();
-        System.out.print("Enter an adjective: ");
+        System.out.print("adjective: ");
         String adjective = storyScanner.nextLine();
 
         String story = "The " + adjective + " " + noun + " decided to " + verb + " " + adverb + ".";
@@ -431,8 +433,8 @@ public class Functions {
     }
 
     public static void areaRectangularRoomAI(){
-        double length, width, areaInUnits, areaInFeet, areaInMeters;
-        final double SQ_FEET_TO_SQ_METERS = 0.09290304;
+        double length, width, areaInFeet, areaInMeters;
+        final double feetSqToMeterSq = 0.09290304;
         Scanner input = new Scanner(System.in);
         String unit;
 
@@ -443,11 +445,11 @@ public class Functions {
 
         if(unit.equals("ft")) {
             areaInFeet = length;
-            areaInMeters = areaInFeet * SQ_FEET_TO_SQ_METERS;
+            areaInMeters = areaInFeet * feetSqToMeterSq;
         }
         else if(unit.equals("m")) {
             areaInMeters = length;
-            areaInFeet = areaInMeters / SQ_FEET_TO_SQ_METERS;
+            areaInFeet = areaInMeters / feetSqToMeterSq;
         }
         else {
             System.out.println("Invalid unit of measurement entered.");
@@ -461,11 +463,11 @@ public class Functions {
 
         if(unit.equals("ft")) {
             areaInFeet = areaInFeet * width;
-            areaInMeters = areaInFeet * SQ_FEET_TO_SQ_METERS;
+            areaInMeters = areaInFeet * feetSqToMeterSq;
         }
         else if(unit.equals("m")) {
             areaInMeters = areaInMeters * width;
-            areaInFeet = areaInMeters / SQ_FEET_TO_SQ_METERS;
+            areaInFeet = areaInMeters / feetSqToMeterSq;
         }
         else {
             System.out.println("Invalid unit of measurement entered.");
@@ -550,7 +552,7 @@ public class Functions {
             exactNumberGallon = areaFeetSq / 350.0;
             int numberGallonNeeded = (int) Math.ceil(exactNumberGallon);
 
-            System.out.println("\n> You will need to purchase " + numberGallonNeeded + " paint to cover " + areaFeetSq + " feet square.");
+            System.out.println("\n> You will need to purchase " + df.format(numberGallonNeeded) + " paint to cover " + df.format(areaFeetSq) + " feet square.");
 
             while(true){
                 System.out.print("\n> Make another Calculation? <yes/no> ");
@@ -595,6 +597,24 @@ public class Functions {
         }
     }
 
+    public static void popOutWindow(){
+
+        while(true) {
+            String name = JOptionPane.showInputDialog(null, "what is your name?", "NAME", PLAIN_MESSAGE);
+            String ageStr = JOptionPane.showInputDialog(null, "How old are you?", "AGE", PLAIN_MESSAGE);
+
+//            int age = Integer.parseInt(ageStr);
+
+            JOptionPane.showMessageDialog(null, "Hello " + name + ",\nYou are " + ageStr + " years old.", "Intro", PLAIN_MESSAGE);
+
+            int Option = JOptionPane.showConfirmDialog(null,"Try Again?","Again?",JOptionPane.YES_NO_CANCEL_OPTION,PLAIN_MESSAGE);
+            System.out.println(Option);
+
+            if (Option != 0) {
+                return;
+            }
+        }
+    }
 
 
 } // main class
