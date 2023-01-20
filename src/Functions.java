@@ -4,25 +4,22 @@ import java.text.DecimalFormat;
 import javax.swing.*;
 import static javax.swing.JOptionPane.*;
 
-
 public class Functions {
 
     public static void gradeCalc(int grade){
 
         if (grade >= 90){
             System.out.println("your grade is " + grade + " you get an A");
-
         }else if(grade >=80){
             System.out.println("your grade is " + grade + " you get an B");
-
         }else if(grade>=70){
             System.out.println("your grade is " + grade + " you get an C");
-
         }else if(grade >=60){
             System.out.println("your grade is " + grade + " you get an D");
-
         }else if(grade<=50){
-            System.out.println("your grade is " + grade + " you get an F-");}}
+            System.out.println("your grade is " + grade + " you get an F-");
+        }
+    }
 
     public static void BMICalc(){
         Scanner anotherScanner = new Scanner(System.in);
@@ -80,7 +77,7 @@ public class Functions {
 
     public static void ageCalcTill90Years(){
         Scanner ageScanner = new Scanner(System.in);
-        System.out.println("How old are you?");
+        System.out.print("How old are you? ");
         int age = ageScanner.nextInt();
 
         int day,week,month;
@@ -615,6 +612,65 @@ public class Functions {
             }
         }
     }
+
+    public static void thePrime(){
+
+        int[] numbers = {2, 3, 4, 5, 6, 7, 8, 9, 10};
+        ArrayList<Integer> primes = new ArrayList<>();
+
+        for (int number : numbers) {
+            if (isPrime(number)) {
+                primes.add(number);
+            }
+        }
+        System.out.println("The prime numbers in the array are: " + primes);
+    }
+
+    public static boolean isPrime(int n) {
+        if (n <= 1) {
+            return false;
+        }
+        for (int i = 2; i < n; i++) {
+            if (n % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static void DNA(){
+        Scanner DNASCanner = new Scanner(System.in);
+
+        while(true){
+            System.out.print(" \n>DNA: ");
+            String DNA = DNASCanner.next();
+
+            int ATG = DNA.indexOf("ATG");
+            int TGA = DNA.indexOf("TGA");
+
+            int sequenceDifference = ATG - TGA;
+
+            if (DNA.contains("ATG") && DNA.contains("TGA") && (sequenceDifference % 3) == 0) {
+                System.out.println("\""+DNA +"\" Does contain protein!");
+            } else {
+                System.out.println("\""+DNA +"\" Does not contain protein!");
+            }
+
+            while (true){
+                System.out.print("\n > Try with another DNA? <y/n> ...");
+                String DNAOption = DNASCanner.next();
+                if (DNAOption.equals("y")){
+                    break;
+                }else if (DNAOption.equals("n")){
+                    System.out.println("> Quitting");
+                    return;
+                }else{
+                    System.out.println("> Error - \""+DNAOption+"\" Not Fount! ");
+                }
+            }
+        }
+    }
+
 
 
 } // main class
