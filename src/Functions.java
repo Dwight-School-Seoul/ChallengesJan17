@@ -35,18 +35,8 @@ public class Functions {
                 System.out.println("Invalid input. Please enter a grade between 0 and 100.");
             }
 
-            while(true){
-                System.out.print("\n\n > Make another Calculation? <yes|no> ");
-                String gradeOption = gradeScanner.next().trim().strip().toLowerCase();
+            While.again();
 
-                if(gradeOption.equals("yes")){
-                    break;
-                }else if (gradeOption.equals("no")){
-                    return;
-                }else{
-                    System.out.println("\n > Error -  Command \""+gradeOption+"\" Not Found!");
-                }
-            }
         }
     }
 
@@ -262,20 +252,7 @@ public class Functions {
             String author = quotScanner.nextLine().trim().strip();
             System.out.println(author + " says, " + '"'+quot+'"');
 
-            while (true){
-                System.out.println(" \n> Do you want to print another quot? <yes | no>");
-                String option = quotScanner.nextLine().trim().strip().toLowerCase();
-
-                if(option.equals("no")){
-                    System.out.println(" > Thank you for using the program, See you later!");
-                    return;
-
-                }else if(option.equals("yes")){
-                    break;
-                }else{
-                    System.out.println(" > Error - " + '"'+option+'"');
-                }
-            }
+            While.again();
 
         }
     }
@@ -363,20 +340,8 @@ public class Functions {
             System.out.println("> Product: " + product);
             System.out.println("> Quotient: " + quotient);
 
-            while (true) {
-                System.out.println("\n > Do you want to try with different numbers? <yes/no>");
-                String response = simpleMathScanner.next().toLowerCase();
+            While.again();
 
-                if (response.equals("yes")) {
-                    break;
-                } else if (response.equals("no")) {
-                    System.out.println("Exiting...");
-                    SimpleTuition = false;
-                    break;
-                } else {
-                    System.out.println("Error: Please enter 'yes' or 'no'.");
-                }
-            }
         }
     }
 
@@ -394,18 +359,8 @@ public class Functions {
             } else {
                 System.out.println("You can already retire.");
             }
-            while(true){
-                System.out.println("\n> Do you want to make another Calculation? <yes/no>");
-                String retirementOption = retirementScanner.next().trim().strip().toLowerCase();
-                if(retirementOption.equals("yes")){
-                    break;
-                } else if (retirementOption.equals("no")) {
-                    System.out.println(" > Quitting");
-                    return;
-                }else{
-                    System.out.println(" > Error - " + '"'+retirementOption+'"');
-                }
-            }
+            While.again();
+
         }
     }
 
@@ -443,18 +398,8 @@ public class Functions {
             System.out.println("    > " + df.format(areaFeetSq) + " Square Feet");
             System.out.println("    > " + df.format(areaMeterSq) + " Square Meters");
 
-            while(true){
-                System.out.print("\n\n > Try Again? <yes|no>");
-                String areaOption = areaScanner.next().trim().strip().toLowerCase();
+            While.again();
 
-                if(areaOption.equals("yes")){
-                    break;
-                }else if (areaOption.equals("no")){
-                    return;
-                }else{
-                    System.out.println("\n > Error -  Command \""+areaOption+"\" Not Found!");
-                }
-            }
         }
     }
 
@@ -525,19 +470,8 @@ public class Functions {
             System.out.println("\nEach person gets " + slicesPerPerson + " pieces of pizza.");
             System.out.println("There are " + pizzaLeft + " leftover pieces");
 
-            while(true){
-                System.out.println("\n> Do you want to make another calculation? <yes/no>");
-                String pizzaOption = pizzaScanner.next().trim().strip().toLowerCase();
+            While.again();
 
-                if (pizzaOption.equals("yes")){
-                    break;
-                } else if (pizzaOption.equals("no")) {
-                    System.out.println("> Quitting ");
-                    return;
-                }else{
-                    System.out.println("> Error - \""+pizzaOption+"\" not found! ");
-                }
-            }
         }
     }
 
@@ -580,19 +514,8 @@ public class Functions {
 
             System.out.println("\n> You will need to purchase " + df.format(numberGallonNeeded) + " paint to cover " + df.format(areaFeetSq) + " feet square.");
 
-            while(true){
-                System.out.print("\n> Make another Calculation? <yes/no> ");
-                String paintOption = paintScanner.next().trim().strip().toLowerCase();
+            While.again();
 
-                if(paintOption.equals("yes")){
-                    break;
-                }else if (paintOption.equals("no")) {
-                    System.out.println("\n> Quitting");
-                    return;
-                }else {
-                    System.out.println("\n> Error - the command \""+paintOption+"\" not found! ");
-                }
-            }
         }
     }
 
@@ -608,18 +531,8 @@ public class Functions {
             System.out.println("\n> The String in Upper Case \""+myString.toUpperCase()+"\"");
             System.out.println("> The String in Lower Case \""+myString.toLowerCase()+"\"");
 
-            while (true){
-                System.out.print("\n > Enter another String? <y/n> ...");
-                String lengthOption = lengthScanner.next();
-                if (lengthOption.equals("y")){
-                    break;
-                }else if (lengthOption.equals("n")){
-                    System.out.println("> Quitting");
-                    return;
-                }else{
-                    System.out.println("> Error - \""+lengthOption+"\" Not Fount! ");
-                }
-            }
+            While.again();
+
         }
     }
 
@@ -685,18 +598,7 @@ public class Functions {
                 System.out.println("\""+DNA +"\" Does not contain protein!");
             }
 
-            while (true){
-                System.out.print("\n > Try with another DNA? <y/n> ...");
-                String DNAOption = DNASCanner.next();
-                if (DNAOption.equals("y")){
-                    break;
-                }else if (DNAOption.equals("n")){
-                    System.out.println("> Quitting");
-                    return;
-                }else{
-                    System.out.println("> Error - \""+DNAOption+"\" Not Fount! ");
-                }
-            }
+            While.again();
         }
     }
 
@@ -717,18 +619,8 @@ public class Functions {
                 System.out.println("You were born in the second half of the year.");
             }
 
-            while (true){
-                System.out.print("\n > Try Again? <y/n> ...");
-                String birthMonthOption = birthMon.next();
-                if (birthMonthOption.equals("y")){
-                    break;
-                }else if (birthMonthOption.equals("n")){
-                    System.out.println("> Quitting");
-                    return;
-                }else{
-                    System.out.println("> Error - \""+birthMonthOption+"\" Not Fount! ");
-                }
-            }
+            While.again();
+
         }
     }
 
@@ -746,18 +638,7 @@ public class Functions {
                 String[] months = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
                 System.out.println("The name of the month is " + months[monthNumber - 1] + ".");
             }
-            while (true){
-                System.out.print("\n > Try Again? <y/n> ...");
-                String numberToNameOption = numberToNameScanner.next();
-                if (numberToNameOption.equals("y")){
-                    break;
-                }else if (numberToNameOption.equals("n")){
-                    System.out.println("> Quitting");
-                    return;
-                }else{
-                    System.out.println("> Error - \""+numberToNameOption+"\" Not Fount! ");
-                }
-            }
+            While.again();
         }
     }
 
@@ -779,19 +660,41 @@ public class Functions {
             } else {
                 System.out.println("Invalid input.");
             }
-            while (true){
-                System.out.print("\n > Try Again? <y/n> ");
-                String temperatureConvOption = temperatureConvScanner.next();
-                if (temperatureConvOption.equals("y")){
-                    break;
-                }else if (temperatureConvOption.equals("n")){
-                    System.out.println("> Quitting");
-                    return;
-                }else{
-                    System.out.println("> Error - \""+temperatureConvOption+"\" Not Fount! ");
-                }
-            }
+            While.again();
         }
+    }
+
+    public static void comparingNumbers(){
+        Scanner sc = new Scanner(System.in);
+        while(true) {
+            int num1, num2, num3;
+            System.out.print("Enter the first number: ");
+            num1 = sc.nextInt();
+            System.out.print("Enter the second number: ");
+            num2 = sc.nextInt();
+            System.out.print("Enter the third number: ");
+            num3 = sc.nextInt();
+
+            if (num1 == num2 || num1 == num3 || num2 == num3) {
+                System.out.println("numbers should be different");
+                return;
+            }
+            int largest = num1;
+            if (num2 > largest) {
+                largest = num2;
+            }
+            if (num3 > largest) {
+                largest = num3;
+            }
+            System.out.println("The largest number is " + largest);
+
+            While.again();
+        }
+    }
+
+    public static void Bcrypt(){
+
+
     }
 
 

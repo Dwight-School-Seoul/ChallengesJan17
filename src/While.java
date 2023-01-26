@@ -12,7 +12,7 @@ public class While {
                 break;
             }else if (Option.equals("n")){
                 System.out.println("> Quitting");
-                return;
+                System.exit(0);
             }else{
                 System.out.println("> Error - \""+Option+"\" Not Fount! ");
             }
