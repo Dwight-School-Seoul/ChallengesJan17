@@ -1,3 +1,4 @@
+import java.security.PublicKey;
 import java.util.*;
 import java.lang.Math;
 import java.text.DecimalFormat;
@@ -238,6 +239,84 @@ public class Functions {
                     System.out.println("Magic8Ball -> Error, I don't understand '" + option + "'");
                 }
             }
+        }
+    }
+
+    public static void magic8BallV3(){
+
+        System.out.println("\n        ----{ Magic8ball }----        ");
+        Scanner playScanner = new Scanner(System.in);
+        Random ran = new Random();
+
+        while (true){
+            int x = ran.nextInt(20);
+            System.out.println("\nType Your Question Here... ");
+            playScanner.nextLine();
+
+
+            switch (x){
+                case 0:
+                    System.out.println("Magic8Ball ->  It is certain");
+                    break;
+                case 1:
+                    System.out.println("Magic8Ball -> It is decidedly so");
+                    break;
+                case 2:
+                    System.out.println("Magic8Ball -> Without a doubt");
+                    break;
+                case 3:
+                    System.out.println("Magic8Ball -> Yes definitely");
+                    break;
+                case 4:
+                    System.out.println("Magic8Ball -> You may rely on it");
+                    break;
+                case 5:
+                    System.out.println("Magic8Ball -> As I see it, yes");
+                    break;
+                case 6:
+                    System.out.println("Magic8Ball -> Most likely");
+                    break;
+                case 7:
+                    System.out.println("Magic8Ball -> Outlook good");
+                    break;
+                case 8:
+                    System.out.println("Magic8Ball -> Yes");
+                    break;
+                case 9:
+                    System.out.println("Magic8Ball -> Signs point to yes");
+                    break;
+                case 10:
+                    System.out.println("Magic8Ball -> Reply hazy, try again");
+                    break;
+                case 11:
+                    System.out.println("Magic8Ball -> Ask again later");
+                    break;
+                case 12:
+                    System.out.println("Magic8Ball -> Better not tell you now");
+                    break;
+                case 13:
+                    System.out.println("Magic8Ball -> Cannot predict now");
+                    break;
+                case 14:
+                    System.out.println("Magic8Ball -> Concentrate and ask again");
+                    break;
+                case 15:
+                    System.out.println("Magic8Ball -> Don’t count on it");
+                    break;
+                case 16:
+                    System.out.println("Magic8Ball -> My reply is no");
+                    break;
+                case 17:
+                    System.out.println("Magic8Ball -> My sources say no");
+                    break;
+                case 18:
+                    System.out.println("Magic8Ball -> Outlook not so good");
+                    break;
+                case 19:
+                    System.out.println("Magic8Ball -> Very doubtful");
+                    break;
+            }
+            While.again();
         }
     }
 
@@ -692,9 +771,47 @@ public class Functions {
         }
     }
 
-    public static void Bcrypt(){
+    public static void minConvertor(){
 
+        DecimalFormat df = new DecimalFormat("#.###");
+        Scanner conScanner = new Scanner(System.in);
 
+        while(true) {
+            System.out.print("Enter Number of Min.. ");
+            Double numMin = conScanner.nextDouble();
+
+            double numHours = numMin / 60;
+            double numDay = numMin / 1440;
+
+            System.out.printf("%s minutes equals %s hours and equals %s days.", df.format(numMin), df.format(numHours), df.format(numDay));
+
+            While.again();
+        }
+
+    }
+
+    public static void breakDownDollars(){
+
+        Scanner scan = new Scanner(System.in);
+
+        while(true) {
+
+            System.out.print("\nEnter amount in dollars: ");
+            int amount = scan.nextInt();
+
+            int twenties = amount / 20;
+            amount = amount % 20;
+            int tens = amount / 10;
+            amount = amount % 10;
+            int fives = amount / 5;
+            amount = amount % 5;
+            int ones = amount;
+
+            System.out.printf("\n Twenties: %d \n Tens: %d \n Fives: %d \n Ones: %d\n",twenties,tens,fives,ones);
+
+            While.again();
+
+        }
     }
 
 
