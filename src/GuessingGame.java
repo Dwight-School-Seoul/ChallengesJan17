@@ -46,6 +46,7 @@ public class GuessingGame {
                 System.out.print("\n" + guessesRemaining + " guesses left");
 
                 if (guessesRemaining == 0) {
+                    System.out.println("\nThe Correct Number was \""+number+"\"");
                     System.out.println("\n\nYou Failed 💣");
                     int j = 5;
                     try {
