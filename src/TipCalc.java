@@ -13,4 +13,5 @@ public class TipCalc {
         System.out.println("Your total bill is "+bill+", your tip is "+ tip +", and the sum is " +sum);
     }
 
+
 }

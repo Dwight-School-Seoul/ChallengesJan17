@@ -15,4 +15,5 @@ public class GoToSchool {
             System.out.println("Invalid input");
         }
     }
+
 }

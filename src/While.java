@@ -11,11 +11,12 @@ public class While {
             if (Option.equals("y")){
                 break;
             }else if (Option.equals("n")){
-                System.out.println("> Quitting");
+                System.out.println(" \n> Quitting");
                 System.exit(0);
             }else{
                 System.out.println("> Error - \""+Option+"\" Not Fount! ");
             }
         }
     }
+
 }

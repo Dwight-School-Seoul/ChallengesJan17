@@ -39,4 +39,5 @@ public class StoryGenerator {
                 + " They then decided to live happily ever after.";
         System.out.println(story);
     }
+
 }

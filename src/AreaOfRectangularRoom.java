@@ -72,4 +72,5 @@ public class AreaOfRectangularRoom {
         }
         System.out.printf("The area of the room is %.2f square feet and %.2f square meters.", areaInFeet, areaInMeters);
     }
+
 }

@@ -23,4 +23,5 @@ public class DNA {
             While.again();
         }
     }
+
 }

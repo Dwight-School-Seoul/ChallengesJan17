@@ -9,4 +9,5 @@ public class GreetingUser {
         System.out.println("Hello "+ yourName+ ", Nice to meed you " + yourName + "!");
 
     }
+
 }

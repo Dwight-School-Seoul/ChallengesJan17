@@ -14,4 +14,5 @@ public class AgeCalcUntil90Years {
 
         System.out.println("You have "+day+" days, "+week+" weeks and "+month+" months left.");
     }
+
 }

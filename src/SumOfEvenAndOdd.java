@@ -19,4 +19,5 @@ public class SumOfEvenAndOdd {
         System.out.println("Sum of odd numbers: " + oddSum);
 
     }
+
 }
