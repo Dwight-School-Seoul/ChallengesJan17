@@ -886,16 +886,16 @@ public class Functions {
                     System.out.println(" You won! The target number was " + number);
                     break;
                 } else if (guess < target) {
-                    System.out.println("\n The Number "+ guess+" is Too low. ");
+                    System.out.println("\n The Number \""+ guess+"\" is Too low. ");
                 } else {
-                    System.out.println("\n The Number "+ guess+" is Too high.");
+                    System.out.println("\n The Number \""+ guess+"\" is Too high.");
                 }
-                numberGuesses--;
-                System.out.println("\n You have "+ numberGuesses+" left");
+                int GuessesRemaining = numberGuesses-- ;
+                System.out.print("\n"+ GuessesRemaining+" guesses left, Try Again: ");
                 i++;
             }
 
-            System.out.println("\nYou Failed 💣");
+            System.out.println("\n\nYou Failed 💣");
             int j = 5;
             try {
                 while (j > 0) {
