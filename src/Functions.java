@@ -853,7 +853,7 @@ public class Functions {
 
         Random r = new Random();
         Scanner scan = new Scanner(System.in);
-        int level, target, numberGuesses;
+        int level, target, numberGuesses, guessesRemaining=0;
 
         while(true){
             System.out.println(" \n\n------> Welcome to my Guessing Game <------ ");
@@ -873,14 +873,10 @@ public class Functions {
                 numberGuesses = 5;
                 target = 100;
             }
-            int guessingAmount = numberGuesses;
             int number = r.nextInt(target) + 1;
-            int i=0;
 
-            System.out.println("\n You have "+ numberGuesses+" guesses");
-            System.out.print(" \n> Guess a number between 1 and "+target+": ");
-
-            while (i < guessingAmount) {
+            for (int i = 0; i <= numberGuesses; i++) {
+                System.out.print(" \n> Guess a number between 1 and "+target+": ");
                 int guess = scan.nextInt();
                 if (guess == target) {
                     System.out.println(" You won! The target number was " + number);
@@ -890,9 +886,9 @@ public class Functions {
                 } else {
                     System.out.println("\n The Number \""+ guess+"\" is Too high.");
                 }
-                int GuessesRemaining = numberGuesses-- ;
-                System.out.print("\n"+ GuessesRemaining+" guesses left, Try Again: ");
-                i++;
+                guessesRemaining = numberGuesses - i;
+                System.out.print("\n"+ guessesRemaining+" guesses left");
+
             }
 
             System.out.println("\n\nYou Failed 💣");
