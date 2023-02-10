@@ -1,5 +1,5 @@
 public class FizzBuzz {
-    public static void fizzBuss(){
+    public static void main(){
 
         for(int i=1; i<=100; i++){
             if (i % 3 == 0){

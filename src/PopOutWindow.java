@@ -4,7 +4,7 @@ import static javax.swing.JOptionPane.PLAIN_MESSAGE;
 
 public class PopOutWindow {
 
-    public static void popOutWindow(){
+    public static void main(){
 
         while(true) {
             String name = JOptionPane.showInputDialog(null, "what is your name?", "NAME", PLAIN_MESSAGE);

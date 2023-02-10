@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class NumberToName {
 
-    public static void numberToName(){
+    public static void main(){
 
         Scanner numberToNameScanner = new Scanner(System.in);
 

@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class BreakDownDollars {
 
-    public static void breakDownDollars(){
+    public static void main(){
 
         Scanner scan = new Scanner(System.in);
 

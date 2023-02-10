@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class StringLength {
 
-    public static void countStringLength(){
+    public static void main(){
 
         Scanner lengthScanner = new Scanner(System.in);
 

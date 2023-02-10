@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class GradeCalc {
 
-    public static void gradeCalc(){
+    public static void main(){
 
         Scanner gradeScanner = new Scanner(System.in);
 

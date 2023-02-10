@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class SimpleMath {
 
-    public static void simpleMath(){
+    public static void main(){
         Scanner simpleMathScanner = new Scanner(System.in);
         boolean SimpleTuition = true;
         while (SimpleTuition) {

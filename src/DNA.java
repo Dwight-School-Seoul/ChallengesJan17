@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class DNA {
 
-    public static void DNA(){
+    public static void main(){
         Scanner DNASCanner = new Scanner(System.in);
 
         while(true){

@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class MinuteConvertor {
 
-    public static void minConvertor(){
+    public static void main(){
 
         DecimalFormat df = new DecimalFormat("#.###");
         Scanner conScanner = new Scanner(System.in);

@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class AreaOfRectangularRoom {
 
-    public static void areaRectangularRoom(){
+    public static void main(){
 
         DecimalFormat df = new DecimalFormat("#.###");
         Scanner areaScanner = new Scanner(System.in);

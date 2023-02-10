@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class ComparingNumbers {
 
-    public static void comparingNumbers(){
+    public static void main(){
         Scanner sc = new Scanner(System.in);
         while(true) {
             int num1, num2, num3;

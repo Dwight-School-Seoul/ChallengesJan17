@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class GuessingGame {
 
-    public static void guessingGame(){
+    public static void main(){
 
         Random r = new Random();
         Scanner scan = new Scanner(System.in);

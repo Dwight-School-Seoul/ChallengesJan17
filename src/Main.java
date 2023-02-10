@@ -1,9 +1,8 @@
-
 public class Main {
     public static void main(String[] args) {
 
-    ReverseString.reverseString();
+        PasswordGen.main();
 
 
     } // void main
-}// Main Class
+}// main

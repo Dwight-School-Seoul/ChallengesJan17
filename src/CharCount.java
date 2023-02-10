@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class CharCount {
 
-    public static void charCount(){
+    public static void main(){
 
         Scanner anotherScanner = new Scanner(System.in);
         boolean continueLoop = true;

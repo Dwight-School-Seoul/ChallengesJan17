@@ -27,5 +27,4 @@ public class ThePrime {
         return true;
     }
 
-
 }

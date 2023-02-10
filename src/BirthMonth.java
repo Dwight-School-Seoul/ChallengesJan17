@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class BirthMonth {
 
-    public static void birthMonth(){
+    public static void main(){
         Scanner birthMon = new Scanner(System.in);
 
         while(true){

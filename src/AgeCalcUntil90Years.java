@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class AgeCalcUntil90Years {
-    public static void ageCalcTill90Years(){
+    public static void main(){
         Scanner ageScanner = new Scanner(System.in);
         System.out.print("How old are you? ");
         int age = ageScanner.nextInt();

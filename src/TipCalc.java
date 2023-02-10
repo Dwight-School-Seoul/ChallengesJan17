@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class TipCalc {
-    public static void tipCalc(){
+    public static void main(){
 
         Scanner tipScanner = new Scanner(System.in);
         double bill, tip, sum;

@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class PizzaParty {
 
-    public static void pizzaParty(){
+    public static void main(){
 
         Scanner pizzaScanner = new Scanner(System.in);
 

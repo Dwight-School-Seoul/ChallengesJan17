@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class TemperatureConverter {
 
-    public static void temperatureConverter(){
+    public static void main(){
         Scanner temperatureConvScanner = new Scanner(System.in);
 
         while(true){

@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class RetirementCalc {
 
-    public static void retirementCalc(){
+    public static void main(){
         Scanner retirementScanner = new Scanner(System.in);
         while (true) {
             System.out.print("\n> What is your current age? ");
