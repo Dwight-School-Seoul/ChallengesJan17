@@ -4,7 +4,6 @@ public class PasswordGen {
     public static void main(){
 
         Scanner scan = new Scanner(System.in);
-        PasswordGen obj = new PasswordGen();
 
         char[] letters = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R', 'S','T', 'U','V','W','X','Y','Z','a','b','c','d','e','f','g','h','i','j','k','l','m','m','o','p','q','r', 's','t', 'u','v','w','x','y','z'};
         char[] specialCharacters = {'!','@','#','$','%','^','&','*','(',')','-','+','='};
@@ -25,19 +24,19 @@ public class PasswordGen {
 
             if (total < 0) {
                 System.out.println(ConsoleColors.RED_BOLD_BRIGHT+"\n ⛔️ ERROR - The length of the password should be higher than 0.");
-                System.exit(0);
+               return;
             }
 
             String rawPassword="";
 
             for (int i = 0; i < total; i++) {
-                rawPassword += obj.get(letters);
+                rawPassword += get(letters);
             }
             for (int i = 0; i < specialCharCount; i++) {
-                rawPassword += obj.get(specialCharacters);
+                rawPassword += get(specialCharacters);
             }
             for (int i = 0; i < numCount; i++) {
-                rawPassword += obj.getInt(numbers);
+                rawPassword += getInt(numbers);
             }
 
             char[] shufflePassword = rawPassword.toCharArray();
@@ -67,11 +66,11 @@ public class PasswordGen {
             password[i] = temp;
         }
     }
-    private char get(char[] letters) {
+    private static char get(char[] letters) {
         Random rand = new Random();
         return letters[rand.nextInt(letters.length)];
     }
-    private int getInt(int[] numbers) {
+    private static int getInt(int[] numbers) {
         Random rand = new Random();
         return numbers[rand.nextInt(numbers.length)];
     }
