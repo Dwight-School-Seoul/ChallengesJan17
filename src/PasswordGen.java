@@ -2,7 +2,6 @@ import java.util.*;
 
 public class PasswordGen {
     public static void main(){
-
         Scanner scan = new Scanner(System.in);
 
         char[] letters = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R', 'S','T', 'U','V','W','X','Y','Z','a','b','c','d','e','f','g','h','i','j','k','l','m','m','o','p','q','r', 's','t', 'u','v','w','x','y','z'};
@@ -24,7 +23,13 @@ public class PasswordGen {
 
             if (total < 0) {
                 System.out.println(ConsoleColors.RED_BOLD_BRIGHT+"\n ⛔️ ERROR - The length of the password should be higher than 0.");
-               return;
+                if(specialCharCount > passwordLength){
+                    System.out.println(ConsoleColors.RED_BOLD_BRIGHT+" ⛔️ ERROR - The length of the " + ConsoleColors.YELLOW_BRIGHT +"special characters" + ConsoleColors.RED_BOLD_BRIGHT+ " should be less that The Password Length.");
+                }
+                if (numCount > passwordLength){
+                    System.out.println(ConsoleColors.RED_BOLD_BRIGHT+" ⛔️ ERROR - The length of the " + ConsoleColors.YELLOW_BRIGHT +"Numbers" + ConsoleColors.RED_BOLD_BRIGHT+ " should be less that The Password Length.");
+                }
+                return;
             }
 
             String rawPassword="";
