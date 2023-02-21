@@ -24,8 +24,7 @@ public class ArraysPractice {
 
         for(int i=0; i<years.length; i++){
             if(years[i] == yearCheck){
-                int index = i;
-                System.out.printf(ConsoleColors.GREEN_BRIGHT+"Fount it it is in index %d 😀\n", index);
+                System.out.printf(ConsoleColors.GREEN_BRIGHT+"Fount it it is in index %d 😀\n", i);
             }else{
                 System.out.printf(ConsoleColors.RED_BRIGHT+"The Year %d is not found in the array ☹️", yearCheck );
                 break;
@@ -37,8 +36,8 @@ public class ArraysPractice {
         int[] array ={20, 32, 29, 35, 16, 99, 100};
         int sum = 0;
 
-        for(int i = 0; i < array.length ; i++ ){
-            sum += array[i];
+        for (int j : array) {
+            sum += j;
         }
         double average = sum/2;
 
@@ -48,8 +47,8 @@ public class ArraysPractice {
     public static void indexEverySec() {
         int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9};
 
-        for (int i = 0; i < array.length; i++) {
-            System.out.println(array[i]);
+        for (int j : array) {
+            System.out.println(j);
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
