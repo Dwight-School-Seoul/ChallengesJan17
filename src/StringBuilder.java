@@ -1,9 +1,6 @@
-import java.util.Arrays;
-import java.util.Random;
-import java.util.Scanner;
+public class StringBuilder {
 
-public class Main {
-    public static void main(String[] args) {
+    public static void stringBuild(){
 
         java.lang.StringBuilder myString = new java.lang.StringBuilder();
         myString.append("hello this is dwight school seoul");
@@ -22,5 +19,9 @@ public class Main {
         myString.delete(startIndex, endIndex);
         System.out.println(myString);
 
+
     }
-}
+
+
+
+} //main
