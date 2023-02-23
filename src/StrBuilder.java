@@ -1,4 +1,4 @@
-public class StringBuilder {
+public class StrBuilder {
 
     public static void stringBuild(){
 
