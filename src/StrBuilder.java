@@ -1,6 +1,6 @@
 public class StrBuilder {
 
-    public static void stringBuild(){
+    public static void main(){
 
         java.lang.StringBuilder myString = new java.lang.StringBuilder();
         myString.append("hello this is dwight school seoul");
