@@ -5,7 +5,6 @@ public class Bank {
 
     private double balance = 0;
     private final String name;
-    private double amount;
     private final int age;
     private final String url="jdbc:mysql://localhost:3306/BankDB";
     private final String username = "admin";
@@ -26,14 +25,14 @@ public class Bank {
         System.out.println(ConsoleColors.GREEN_BOLD_BRIGHT+"\nYour Bank Account Balance is: $"+balance);
     }
 
-    public void withdraw(int amount) {
+    public void withdraw(double amount) {
         if (balance >= amount) {
             balance -= amount;
-            System.out.printf(ConsoleColors.YELLOW_BOLD_BRIGHT + "\nYou have successfully withdrawn %s$%d%s from your account.\n", ConsoleColors.GREEN_BOLD_BRIGHT, amount, ConsoleColors.YELLOW_BOLD_BRIGHT);
+            System.out.printf(ConsoleColors.YELLOW_BOLD_BRIGHT + "\nYou have successfully withdrawn %s$%.2f%s from your account.\n", ConsoleColors.GREEN_BOLD_BRIGHT, amount, ConsoleColors.YELLOW_BOLD_BRIGHT);
 
             String sql = "UPDATE UserLogin SET balance = ? WHERE Name = ?";
             try (Connection conn = DriverManager.getConnection(url, username, password);
-                 PreparedStatement preparedStatement = conn.prepareStatement(sql)) {
+                PreparedStatement preparedStatement = conn.prepareStatement(sql)) {
                 preparedStatement.setDouble(1, balance);
                 preparedStatement.setString(2, name);
                 preparedStatement.executeUpdate();
@@ -41,13 +40,12 @@ public class Bank {
                 System.out.println(ConsoleColors.RED_BOLD_BRIGHT + "Error updating balance: " + e.getMessage() + ConsoleColors.RESET);
             }
         } else {
-            System.out.printf(ConsoleColors.RED_BOLD_BRIGHT + "\nYou don't have enough money in your bank account to withdraw %s$%d. \n", ConsoleColors.GREEN_BOLD_BRIGHT, amount);
+            System.out.printf(ConsoleColors.RED_BOLD_BRIGHT + "\nYou don't have enough money in your bank account to withdraw %s$%.3f. \n", ConsoleColors.GREEN_BOLD_BRIGHT, amount);
         }
     }
 
 
     public void deposit(double amount) throws SQLException {
-        this.amount = amount;
         balance += amount;
 
         String sql = "UPDATE UserLogin SET balance = ? WHERE Name = ?";
@@ -60,12 +58,11 @@ public class Bank {
         int rows = preparedStatement.executeUpdate();
 
         if (rows > 0) {
-            System.out.printf(ConsoleColors.YELLOW_BOLD_BRIGHT+"\nYou have successfully deposited %s$%f%s in your account.\n",ConsoleColors.GREEN_BOLD_BRIGHT, amount, ConsoleColors.YELLOW_BOLD_BRIGHT);
+            System.out.printf(ConsoleColors.YELLOW_BOLD_BRIGHT+"\nYou have successfully deposited %s$%.3f%s in your account.\n",ConsoleColors.GREEN_BOLD_BRIGHT, amount, ConsoleColors.YELLOW_BOLD_BRIGHT);
         }
     }
 
     public void StartDeposit(double amount){
-        this.amount = amount;
         balance += amount;
     }
 
@@ -77,7 +74,6 @@ public class Bank {
                 "\n\t> Deposit - To deposit to your account " +
                 "\n\t> help - To show this list " +
                 "\n\t> Quit - to quit the program");
-
     }
 
     public static void theBank(){
@@ -93,100 +89,106 @@ public class Bank {
             Statement statement = connections.createStatement();
 
             Scanner scan = new Scanner(System.in);
-            int amount;
-            boolean quit = false;
+            double amount;
             Bank bank;
 
             System.out.println(ConsoleColors.CYAN_BOLD_BRIGHT+"\n------------{ John's Bank For Foreigners }------------\n"+ConsoleColors.RESET);
 
-            System.out.println("1. Create a bank account.");
-            System.out.println("2. Login to a bank account.");
-            System.out.print(ConsoleColors.YELLOW_BRIGHT+"\n> Choose an option (1 or 2): ");
+            while(true){
+                System.out.println("\n1. Create a bank account.");
+                System.out.println("2. Login to a bank account.");
+                System.out.print(ConsoleColors.YELLOW_BRIGHT+"\n> Choose an option (1 or 2): "+ConsoleColors.RESET);
+                String ch = scan.next();
 
-            String ch = scan.next();
+                if(ch.equals("1") || ch.equals("2")) {
+                    if(ch.equals("1")){
+                        System.out.println("\nCreating your Bank Account:");
 
-            if(ch.equals("1")){
-                System.out.println("\nCreating your Bank Account:");
+                        System.out.print("\tEnter your name: ");
+                        String name = scan.next();
+                        System.out.print("\tEnter your Age: ");
+                        int age = scan.nextInt();
+                        System.out.print("\tCreate a passcode: ");
+                        int passcode = scan.nextInt();
 
-                System.out.print("\tEnter your name: ");
-                String name = scan.next();
-                System.out.print("\tEnter your Age: ");
-                int age = scan.nextInt();
-                System.out.print("\tCreate a passcode: ");
-                int passcode = scan.nextInt();
+                        PreparedStatement prepareStatement = connections.prepareStatement("INSERT INTO UserLogin (Name, Age, PassCode, balance) VALUES (?, ?, ?, ?)");
 
-                PreparedStatement prepareStatement = connections.prepareStatement("INSERT INTO UserLogin (Name, Age, PassCode, balance) VALUES (?, ?, ?, ?)");
+                        prepareStatement.setString(1, name);
+                        prepareStatement.setInt(2, age);
+                        prepareStatement.setInt(3, passcode);
+                        prepareStatement.setDouble(4, 0.0);
 
-                prepareStatement.setString(1, name);
-                prepareStatement.setInt(2, age);
-                prepareStatement.setInt(3, passcode);
-                prepareStatement.setDouble(4, 0.0);
+                        prepareStatement.executeUpdate();
 
-                prepareStatement.executeUpdate();
+                        System.out.println(ConsoleColors.GREEN_BRIGHT+"\nYou have Successfully Created a Bank Account "+ConsoleColors.RESET);
 
-                System.out.println(ConsoleColors.GREEN+"You have Successfully Created a Bank Account ");
+                    } else {
 
-            } else if(ch.equals("2")){
+                        while(true){
 
-                System.out.println(ConsoleColors.RESET+"\nLogin:");
-                System.out.print("Enter your name: ");
-                String name = scan.next();
-                System.out.print("Enter your passcode: ");
-                int passcode = scan.nextInt();
+                            System.out.println(ConsoleColors.RESET+"\nLogin:");
+                            System.out.print("Enter your name: ");
+                            String name = scan.next();
+                            System.out.print("Enter your passcode: ");
+                            int passcode = scan.nextInt();
 
-                PreparedStatement prepareStatement = connections.prepareStatement("SELECT * FROM UserLogin WHERE Name = ? AND PassCode = ?");
-                prepareStatement.setString(1, name);
-                prepareStatement.setInt(2, passcode);
-                ResultSet resultSet = prepareStatement.executeQuery();
+                            PreparedStatement prepareStatement = connections.prepareStatement("SELECT * FROM UserLogin WHERE Name = ? AND PassCode = ?");
+                            prepareStatement.setString(1, name);
+                            prepareStatement.setInt(2, passcode);
+                            ResultSet resultSet = prepareStatement.executeQuery();
 
-                if (resultSet.next()) {
+                            if (resultSet.next()) {
 
-                    String userName = resultSet.getString("Name");
-                    int userAge = resultSet.getInt("Age");
-                    double userBalance = resultSet.getDouble("balance");
+                                String userName = resultSet.getString("Name");
+                                int userAge = resultSet.getInt("Age");
+                                double userBalance = resultSet.getDouble("balance");
 
-                    bank = new Bank(userName, userAge);
+                                bank = new Bank(userName, userAge);
+                                bank.StartDeposit(resultSet.getDouble("balance"));
 
-                    bank.StartDeposit(resultSet.getDouble("balance"));
-                    System.out.printf("\nWelcome back, %s!\n", userName);
+                                System.out.printf(ConsoleColors.BLUE_BRIGHT+"\nWelcome back, %s!\n"+ConsoleColors.RESET, userName);
 
-                    Bank.bankHelp();
+                                Bank.bankHelp();
 
-                    while(!quit){
-                        System.out.print(ConsoleColors.PURPLE_BOLD_BRIGHT+"\n\t> Command: "+ConsoleColors.RESET);
-                        String option = scan.next().trim().toLowerCase().strip();
+                                while(true){
+                                    System.out.print(ConsoleColors.PURPLE_BOLD_BRIGHT+"\n\t> Command: "+ConsoleColors.RESET);
+                                    String option = scan.next().trim().toLowerCase().strip();
 
-                        switch (option) {
-                            case "info" -> bank.accountInfo();
-                            case "balance" -> bank.ShowBalance();
-                            case "withdraw" -> {
-                                System.out.print("Enter Withdraw Amount: $");
-                                amount = scan.nextInt();
-                                bank.withdraw(amount);
+                                    switch (option) {
+                                        case "info" -> bank.accountInfo();
+                                        case "balance" -> bank.ShowBalance();
+                                        case "withdraw" -> {
+                                            System.out.print("Enter Withdraw Amount: $");
+                                            amount = scan.nextDouble();
+                                            bank.withdraw(amount);
+                                        }
+                                        case "deposit" -> {
+                                            System.out.print("Enter Deposit Amount: $");
+                                            amount = scan.nextDouble();
+                                            bank.deposit(amount);
+
+                                        }
+                                        case "help" -> Bank.bankHelp();
+                                        case "quit", "no" -> {
+                                            System.out.println(ConsoleColors.RED_BOLD+"\nQuitting the program");
+                                            return;
+                                        }
+                                        default ->
+                                                System.out.printf(ConsoleColors.RED_BOLD_BRIGHT + "Unknown command \"%s\"" + ConsoleColors.RESET, option);
+                                    }
+                                }
+                            } else {
+                                System.out.println(ConsoleColors.RED_BRIGHT+"\nIncorrect name or passcode. Please try again."+ConsoleColors.RESET);
                             }
-                            case "deposit" -> {
-                                System.out.print("Enter Deposit Amount: $");
-                                amount = scan.nextInt();
-                                bank.deposit(amount);
-
-                            }
-                            case "help" -> Bank.bankHelp();
-                            case "quit", "no" -> {
-                                System.out.println("Quitting the program");
-                                quit = true;
-                            }
-                            default ->
-                                    System.out.printf(ConsoleColors.RED_BOLD_BRIGHT + "Unknown command \"%s\"" + ConsoleColors.RESET, option);
                         }
                     }
-                } else {
-                    System.out.println("Incorrect name or passcode. Please try again.");
+                }else{
+                    System.out.println(ConsoleColors.RED_BRIGHT+"\nError - \""+ch+"\" not found"+ConsoleColors.RESET);
                 }
             }
-            connections.close();
         }
         catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
     }
 
