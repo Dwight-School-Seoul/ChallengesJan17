@@ -4,8 +4,6 @@ public class Cat {
 
      private int mood= 5, hungry = 5, energy = 5;
 
-
-
     public void meow(){
         System.out.printf("%s\nCat Stats: %s\t\nmood: %s,\t\nhunger: %s, \t\nenergy: %s\n\n\n"+ConsoleColors.RESET,ConsoleColors.YELLOW_BRIGHT,ConsoleColors.GREEN_BRIGHT, mood, hungry, energy);
     }

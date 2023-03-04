@@ -22,7 +22,7 @@ public class Bank {
     }
 
     public void ShowBalance(){
-        System.out.println(ConsoleColors.GREEN_BOLD_BRIGHT+"\nYour Bank Account Balance is: $"+balance);
+        System.out.printf(ConsoleColors.GREEN_BOLD_BRIGHT+"\nYour Bank Account Balance is: $%.3f\n",balance);
     }
 
     public void withdraw(double amount) {
@@ -174,7 +174,7 @@ public class Bank {
                                             return;
                                         }
                                         default ->
-                                                System.out.printf(ConsoleColors.RED_BOLD_BRIGHT + "Unknown command \"%s\"" + ConsoleColors.RESET, option);
+                                            System.out.printf(ConsoleColors.RED_BOLD_BRIGHT + "Unknown command \"%s\"" + ConsoleColors.RESET, option);
                                     }
                                 }
                             } else {
