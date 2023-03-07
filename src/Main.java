@@ -1,9 +1,10 @@
-import java.util.*;
+import Functions.PasswordAttempts;
+import Functions.Person;
 
 public class Main {
     public static void main(String[] main) {
 
-        WordScramble.main();
+        PasswordAttempts.main();
 
     } // void main
 
