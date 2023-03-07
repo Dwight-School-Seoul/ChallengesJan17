@@ -56,7 +56,7 @@ public class While {
 
      /*System.out.print("\nEnter a word for another player to guess: ");
 
-        String input = getStringScanOnly(scan);
+        String input = While.getStringScanOnly(scan);
         char[] originalWord = input.toCharArray();
 
         randomizeString(originalWord);

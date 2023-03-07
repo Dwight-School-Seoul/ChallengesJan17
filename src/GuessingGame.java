@@ -5,7 +5,7 @@ public class GuessingGame {
 
     public static void main(){
 
-        Random r = new Random();
+        Random random = new Random();
         Scanner scan = new Scanner(System.in);
         int level, target, numberGuesses;
 
@@ -27,7 +27,7 @@ public class GuessingGame {
                 numberGuesses = 5;
                 target = 100;
             }
-            int number = r.nextInt(target) + 1;
+            int number = random.nextInt(target) + 1;
             int guessesRemaining = numberGuesses;
 
             for (int i = 0; i < numberGuesses; i++) {

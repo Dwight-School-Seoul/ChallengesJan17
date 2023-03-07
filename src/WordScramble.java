@@ -1,7 +1,7 @@
 import java.util.*;
 public class WordScramble {
 
-    public static void main(String[] args){
+    public static void main(){
 
 
         Scanner scan = new Scanner(System.in);
@@ -39,7 +39,7 @@ public class WordScramble {
                     System.out.println("Game Instructions:\n" +
                             "You have to try to guess what the scrambled word is. You have 3 guesses");
                     for (int i = 0; i < 3; i++) {
-                        System.out.print("\nEnter your guess #" + (i+1) +": ");
+                        System.out.print("Enter your guess #" + (i+1) +": ");
                         String guess = scan.nextLine();
 
                         if (guess.equals(input)) {
@@ -47,7 +47,7 @@ public class WordScramble {
                             score += 5;
                             break;
 
-                        } else if (i == 1) {
+                        } else if (i == 2) {
                             System.out.println("\nSorry, you ran out of guesses. The word was: " + input);
                         } else {
                             System.out.println("\nSorry, that's incorrect. Please try again.");
@@ -66,14 +66,14 @@ public class WordScramble {
                             You have to try to guess what the scrambled word is. You have 3 guesses
                             """);
                     for (int i = 0; i < 3; i++) {
-                        System.out.print("\nEnter your guess #" + (i+1) +": ");
+                        System.out.print("Enter your guess #" + (i+1) +": ");
                         String guess = getAlphabet(scan);
 
                         if (guess.equals(computerWord)) {
                             System.out.println("\nCorrect! You guessed the word.");
                             score += 5;
                             break;
-                        } else if (i == 1) {
+                        } else if (i == 2) {
                             System.out.println("\nSorry, you ran out of guesses. The word was: " + computerWord);
                         } else {
                             System.out.println("\nSorry, that's incorrect. Please try again.");
