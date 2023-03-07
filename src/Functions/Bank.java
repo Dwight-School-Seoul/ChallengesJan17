@@ -74,11 +74,12 @@ public class Bank {
                 "\n\t> Balance - To show your account balance" +
                 "\n\t> Withdraw - To withdraw from you account " +
                 "\n\t> Deposit - To deposit to your account " +
-                "\n\t> help - To show this list " +
+                "\n\t> Logout - To log you out from your current account." +
+                "\n\t> Help - To show this list " +
                 "\n\t> Quit - to quit the program");
     }
 
-    public static void theBank(){
+    public static void main(){
 
         String url="jdbc:mysql://localhost:3306/BankDB";
         String username = "admin";
@@ -104,7 +105,7 @@ public class Bank {
 
                 if(ch.equals("1") || ch.equals("2")) {
                     if(ch.equals("1")){
-                        System.out.println("\nCreating your Functions.Bank Account:");
+                        System.out.println("\nCreating your Bank Account:");
 
                         System.out.print("\tEnter your name: ");
                         String name = scan.next();
@@ -125,7 +126,7 @@ public class Bank {
                         System.out.println(ConsoleColors.GREEN_BRIGHT+"\nYou have Successfully Created a Functions.Bank Account "+ConsoleColors.RESET);
 
                     } else {
-
+                        loop2:
                         while(true){
 
                             System.out.println(ConsoleColors.RESET+"\nLogin:");
@@ -175,12 +176,30 @@ public class Bank {
                                             System.out.println(ConsoleColors.RED_BOLD+"\nQuitting the program");
                                             return;
                                         }
+                                        case "logout" -> {
+                                            System.out.println(ConsoleColors.BLUE_BRIGHT + "\nLogging you out!\n"+ConsoleColors.RESET);
+                                            break loop2;
+                                        }
                                         default ->
                                             System.out.printf(ConsoleColors.RED_BOLD_BRIGHT + "Unknown command \"%s\"" + ConsoleColors.RESET, option);
                                     }
                                 }
                             } else {
                                 System.out.println(ConsoleColors.RED_BRIGHT+"\nIncorrect name or passcode. Please try again."+ConsoleColors.RESET);
+                                System.out.println(ConsoleColors.BLUE_BRIGHT+"\n\t 1. Return to Main Menu. ");
+                                System.out.println(ConsoleColors.BLUE_BRIGHT+"\t 2. Try Again!"+ConsoleColors.RESET);
+                                System.out.print(ConsoleColors.YELLOW_BRIGHT+"\n> Choose an option (1 or 2): "+ConsoleColors.RESET);
+
+                                int option = scan.nextInt();
+
+                                switch (option){
+                                    case 1:
+                                        break loop2;
+                                    case 2:
+                                        break;
+                                    default:
+                                        System.out.printf(ConsoleColors.RED_BOLD_BRIGHT + "Unknown command \"%s\"" + ConsoleColors.RESET, option);
+                                }
                             }
                         }
                     }

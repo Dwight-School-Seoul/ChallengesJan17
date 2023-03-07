@@ -1,16 +1,19 @@
+package Functions;
+
 public class AdultPerson {
 
-    private String name, food, nationality, languages;
+    private final String name;
+    private String food;
+    private String nationality;
+    private String languages;
     private int age;
     private double weight;
-    private boolean isAdult = false;
+    private boolean isAdult;
 
     public AdultPerson(String name, int age, String nationality){
         this.name = name;
         this.age = age;
-        if(age>=18){
-            isAdult = true;
-        }
+        isAdult = this.age >= 18;
         this.nationality = nationality;
     }
 
@@ -29,11 +32,7 @@ public class AdultPerson {
     }
     public void age(int newAge){
         this.age = newAge;
-        if(age>=18){
-            isAdult = true;
-        }else{
-            isAdult = false;
-        }
+        isAdult = age >= 18;
     }
 
     public void weight(double newWeight){
