@@ -26,20 +26,28 @@ public class While {
     }
 
     public static String getStringScanOnly(Scanner scan) {
-        String input = scan.nextLine();
+        String input = scan.next();
         while (!input.matches("^[a-zA-Z]+$")) {
-            System.out.print(ConsoleColors.RED_BOLD_BRIGHT + "\n ⛔️ Invalid Input, Must Only Contain Alphabetical Characters Only," + ConsoleColors.YELLOW_BRIGHT + " Try Again!: ");
-            input = scan.nextLine();
+            System.out.print(ConsoleColors.RED_BOLD_BRIGHT + "\t⛔️ Invalid Input, Please enter a String Value: "+ ConsoleColors.RESET);
+            input = scan.next();
         }
         return input;
     }
 
     public static int getIntegerScanOnly(Scanner scan) {
         while (!scan.hasNextInt()) {
-            System.out.print(ConsoleColors.RED_BOLD_BRIGHT + "\n ⛔️ Invalid Input, Must Be Numbers," + ConsoleColors.YELLOW_BRIGHT + " Try Again!: ");
+            System.out.print(ConsoleColors.RED_BOLD_BRIGHT + "\t⛔️ Invalid Input, Please enter an Integer Value: "+ ConsoleColors.RESET);
             scan.next();
         }
         return scan.nextInt();
+    }
+
+    public static double getDoubleScanOnly(Scanner scan){
+        while (!scan.hasNextDouble()) {
+            System.out.print(ConsoleColors.RED_BOLD_BRIGHT + "\t⛔️ Invalid Input, Please enter a Integer or Double value: "+ ConsoleColors.RESET);
+            scan.next();
+        }
+        return scan.nextDouble();
     }
 
     public static void randomizeString(char[] input) {
