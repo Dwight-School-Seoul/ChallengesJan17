@@ -40,6 +40,7 @@ public class WordScramble {
                     System.out.println("\nThe scrambled word is: " + scrambledWord);
                     System.out.println("Game Instructions:\n" +
                             "You have to try to guess what the scrambled word is. You have 3 guesses");
+
                     for (int i = 0; i < 3; i++) {
                         System.out.print("Enter your guess #" + (i+1) +": ");
                         String guess = scan.nextLine();
@@ -55,6 +56,7 @@ public class WordScramble {
                             System.out.println("\nSorry, that's incorrect. Please try again.");
                         }
                     }
+
                 }
                 case "2" -> {
                     String computerWord = getWord(computerWords);
@@ -67,6 +69,7 @@ public class WordScramble {
                             Game Instructions:
                             You have to try to guess what the scrambled word is. You have 3 guesses
                             """);
+
                     for (int i = 0; i < 3; i++) {
                         System.out.print("Enter your guess #" + (i+1) +": ");
                         String guess = getAlphabet(scan);
@@ -81,6 +84,7 @@ public class WordScramble {
                             System.out.println("\nSorry, that's incorrect. Please try again.");
                         }
                     }
+
                 }
                 case "3" -> System.out.println("\nYour score is: " + score);
                 case "4" -> {
