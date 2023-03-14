@@ -94,7 +94,7 @@ public class Bank {
             System.out.println(ConsoleColors.CYAN_BOLD_BRIGHT+"\n------------{ John's DataBase.Bank For Foreigners }------------\n"+ ConsoleColors.RESET);
 
             while(true){
-                System.out.println(ConsoleColors.CYAN_BOLD_BRIGHT+"\n--------{ Main.Main Menu }--------"+ ConsoleColors.RESET);
+                System.out.println(ConsoleColors.CYAN_BOLD_BRIGHT+"\n--------{ CSVFilePractice.CSVFilePractice Menu }--------"+ ConsoleColors.RESET);
                 System.out.println("\n1. Create a bank account.");
                 System.out.println("2. Login to a bank account.");
                 System.out.print(ConsoleColors.YELLOW_BRIGHT+"\n> Choose an option (1 or 2): "+ ConsoleColors.RESET);
@@ -194,7 +194,7 @@ public class Bank {
                                 }
                             } else {
                                 System.out.println(ConsoleColors.RED_BRIGHT+"\nIncorrect username or passcode."+ ConsoleColors.RESET);
-                                System.out.println(ConsoleColors.BLUE_BRIGHT+"\t 1. Return to Main.Main Menu. ");
+                                System.out.println(ConsoleColors.BLUE_BRIGHT+"\t 1. Return to CSVFilePractice.CSVFilePractice Menu. ");
                                 System.out.println(ConsoleColors.BLUE_BRIGHT+"\t 2. Try Again!"+ ConsoleColors.RESET);
                                 System.out.print(ConsoleColors.YELLOW_BRIGHT+"\n> Choose an option (1 or 2): "+ ConsoleColors.RESET);
 
