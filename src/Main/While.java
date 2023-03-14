@@ -1,4 +1,5 @@
-package Challenges;
+package Main;
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -65,7 +66,7 @@ public class While {
 
      /*System.out.print("\nEnter a word for another player to guess: ");
 
-        String input = While.getStringScanOnly(scan);
+        String input = Main.While.getStringScanOnly(scan);
         char[] originalWord = input.toCharArray();
 
         randomizeString(originalWord);

@@ -1,6 +1,7 @@
 package Challenges;
 
 import java.util.*;
+import Main.*;
 
 public class PasswordGen {
     public static void main(){

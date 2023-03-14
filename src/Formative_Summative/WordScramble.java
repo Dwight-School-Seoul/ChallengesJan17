@@ -5,8 +5,7 @@ public class WordScramble {
 
     private static int score;
 
-    public static void main(String[] args){
-
+    public static void main(){
 
         Scanner scan = new Scanner(System.in);
 
@@ -104,7 +103,7 @@ public class WordScramble {
         return input;
     }
 
-    private static void guessUpto3(String Word){
+     private static void guessUpto3(String Word){
         Scanner scan = new Scanner(System.in);
 
         for (int i = 0; i < 3; i++) {

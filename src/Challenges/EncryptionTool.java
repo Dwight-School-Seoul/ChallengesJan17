@@ -1,6 +1,7 @@
 package Challenges;
 
 import java.util.Scanner;
+import Main.*;
 
 public class EncryptionTool {
 
@@ -10,10 +11,10 @@ public class EncryptionTool {
         while (true){
 
         System.out.print("\n > Enter a message to encrypt: ");
-        String message = scan.nextLine();
+        String message = While.getStringScanOnly(scan);
 
         System.out.print("\n > Enter a key (integer value) for encryption: ");
-        int key = scan.nextInt();
+        int key = While.getIntegerScanOnly(scan);
 
         String encryptedMessage = encrypt(message, key);
         System.out.print("\n > Encrypted message: " + encryptedMessage);

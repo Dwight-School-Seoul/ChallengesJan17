@@ -2,6 +2,7 @@ package Challenges;
 
 import java.util.Random;
 import java.util.Scanner;
+import Main.*;
 
 public class Magic8Ball {
 

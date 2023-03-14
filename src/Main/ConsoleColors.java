@@ -1,4 +1,4 @@
-package Challenges;
+package Main;
 
 public class ConsoleColors {
 

@@ -1,6 +1,7 @@
 package Challenges;
 
 import java.util.Scanner;
+import Main.*;
 
 public class ComparingNumbers {
 

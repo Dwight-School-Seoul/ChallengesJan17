@@ -1,6 +1,7 @@
 package Challenges;
 
 import java.util.Scanner;
+import Main.*;
 
 public class PasswordAttempts {
 
@@ -51,4 +52,4 @@ public class PasswordAttempts {
         return scan.nextInt();
     } // getInt
 
-} // Main
+} // Main.Main

@@ -2,6 +2,7 @@ package Challenges;
 
 import java.util.Arrays;
 import java.util.Scanner;
+import Main.*;
 
 public class ArraysPractice {
 

@@ -2,6 +2,7 @@ package Challenges;
 
 import java.text.DecimalFormat;
 import java.util.Scanner;
+import Main.*;
 
 public class AreaOfRectangularRoom {
 
