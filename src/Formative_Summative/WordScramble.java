@@ -3,13 +3,15 @@ package Formative_Summative;
 import java.util.*;
 public class WordScramble {
 
-    public static void main(){
+    private static int score;
+
+    public static void main(String[] args){
 
 
         Scanner scan = new Scanner(System.in);
 
         System.out.println("\n****** Welcome to Word Scramble *******\n");
-        int score = 0;
+        score = 0;
         boolean quit = false;
 
         do {
@@ -31,38 +33,30 @@ public class WordScramble {
                 case "1" -> {
                     System.out.print("\nEnter a word for another player to guess: ");
                     String input = getAlphabet(scan);
+
                     char[] originalWord = input.toCharArray();
                     scrambleWord(originalWord);
                     String scrambledWord = new String(originalWord);
 
                     System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-
+                    
                     System.out.println("\nThe scrambled word is: " + scrambledWord);
-                    System.out.println("Game Instructions:\n" +
-                            "You have to try to guess what the scrambled word is. You have 3 guesses");
+                    System.out.println("""
 
-                    for (int i = 0; i < 3; i++) {
-                        System.out.print("Enter your guess #" + (i+1) +": ");
-                        String guess = scan.nextLine();
+                            Game Instructions:
+                            You have to try to guess what the scrambled word is. You have 3 guesses
+                            """);
 
-                        if (guess.equals(input)) {
-                            System.out.println("\nCorrect! You guessed the word.");
-                            score += 5;
-                            break;
-
-                        } else if (i == 2) {
-                            System.out.println("\nSorry, you ran out of guesses. The word was: " + input);
-                        } else {
-                            System.out.println("\nSorry, that's incorrect. Please try again.");
-                        }
-                    }
+                    guessUpto3(input);
 
                 }
                 case "2" -> {
                     String computerWord = getWord(computerWords);
+
                     char[] word = computerWord.toCharArray();
                     scrambleWord(word);
                     String scrambledComputerWord = new String(word);
+
                     System.out.println("\nThe scrambled word is: " + scrambledComputerWord);
                     System.out.println("""
 
@@ -70,20 +64,7 @@ public class WordScramble {
                             You have to try to guess what the scrambled word is. You have 3 guesses
                             """);
 
-                    for (int i = 0; i < 3; i++) {
-                        System.out.print("Enter your guess #" + (i+1) +": ");
-                        String guess = getAlphabet(scan);
-
-                        if (guess.equals(computerWord)) {
-                            System.out.println("\nCorrect! You guessed the word.");
-                            score += 5;
-                            break;
-                        } else if (i == 2) {
-                            System.out.println("\nSorry, you ran out of guesses. The word was: " + computerWord);
-                        } else {
-                            System.out.println("\nSorry, that's incorrect. Please try again.");
-                        }
-                    }
+                    guessUpto3(computerWord);
 
                 }
                 case "3" -> System.out.println("\nYour score is: " + score);
@@ -114,7 +95,7 @@ public class WordScramble {
         return letters[rand.nextInt(letters.length)];
     }
 
-    public static String getAlphabet(Scanner scan){
+    private static String getAlphabet(Scanner scan){
         String input = scan.nextLine();
         while (!input.matches("^[a-zA-Z]+$")) {
             System.out.println("\ninvalid - input should only contain alphabetical characters.");
@@ -123,17 +104,25 @@ public class WordScramble {
         return input;
     }
 
-    public static void clearConsole() {
-        try {
-            if (System.getProperty("os.name").contains("Windows")) {
-                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+    private static void guessUpto3(String Word){
+        Scanner scan = new Scanner(System.in);
+
+        for (int i = 0; i < 3; i++) {
+            System.out.print("Enter your guess #" + (i+1) +": ");
+            String guess = getAlphabet(scan);
+
+            if (guess.equals(Word)) {
+                System.out.println("\nCorrect! You guessed the word.");
+                score += 5;
+                break;
+
+            } else if (i == 2) {
+                System.out.println("\nSorry, you ran out of guesses. The word was: " + Word);
             } else {
-                System.out.print("\033[H\033[2J");
-                System.out.flush();
+                System.out.println("\nSorry, that's incorrect. Please try again.");
             }
-        } catch (Exception ex) {
-            // handle exception
         }
+
     }
 
 } // main
