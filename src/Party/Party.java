@@ -1,4 +1,4 @@
-package party_project;
+package Party;
 
 import java.util.*;
 import Main.*;
@@ -9,10 +9,10 @@ public class Party {
     private static String name;
     private static int numGuests;
 
-    private static Scanner scan = new Scanner(System.in);
+    private static final Scanner scan = new Scanner(System.in);
 
     public Party(String name){
-        this.name = name;
+        Party.name = name;
     }
 
     public void partyInfo(){
@@ -25,12 +25,16 @@ public class Party {
         System.out.println(CC.YELLOW_BOLD_BRIGHT+"\nNumber of Guests:" + numGuests);
     }
 
+    public int getNumGuests(){
+        return numGuests;
+    }
+
     public void setGuests(){
         System.out.print(CC.YELLOW_BOLD_BRIGHT+"\nEnter the number of Guests: ");
         numGuests = While.getIntegerScanOnly(scan);
     }
 
-    public void displayInvite(){
+    public void displayInvitation(){
         System.out.println(CC.CYAN_BOLD_BRIGHT+"\nPlease come to my party!");
     }
 
