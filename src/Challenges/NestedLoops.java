@@ -9,21 +9,21 @@ public class NestedLoops {
         Scanner scan = new Scanner(System.in);
 
         for(int i=10; i>=0;i-- ){
-            System.out.println(ConsoleColors.RED_BOLD+i+"...");
+            System.out.println(CC.RED_BOLD+i+"...");
         }
-        System.out.println(ConsoleColors.RED_BRIGHT+"END...");
+        System.out.println(CC.RED_BRIGHT+"END...");
     }
 
     public static void CountDownv2(){
 
         Scanner scan = new Scanner(System.in);
-        System.out.print(ConsoleColors.YELLOW_BRIGHT+"Enter a number for the countdown..");
+        System.out.print(CC.YELLOW_BRIGHT+"Enter a number for the countdown..");
         int number = scan.nextInt();
 
         for(int i=number; i>=0; i--){
-            System.out.println(ConsoleColors.RED_BOLD+"\t\t"+i+"...");
+            System.out.println(CC.RED_BOLD+"\t\t"+i+"...");
         }
-        System.out.println(ConsoleColors.RED_BRIGHT+"End...");
+        System.out.println(CC.RED_BRIGHT+"End...");
     }
 
 

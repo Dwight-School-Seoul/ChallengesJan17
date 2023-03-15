@@ -29,7 +29,7 @@ public class Main {
         }catch (Exception e){
             e.printStackTrace();
         } finally {
-            System.out.println(" Thanks! ");
+            System.out.println(CC.BLUE+"\nThanks! ");
         }
 
     }

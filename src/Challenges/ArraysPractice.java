@@ -45,14 +45,14 @@ public class ArraysPractice {
         int[] years = {1911,1987,1989,1999,2008,2012,2015,2019};
 
         Scanner scan = new Scanner(System.in);
-        System.out.print(ConsoleColors.YELLOW_BRIGHT+"\nWhat year do you want to check? ");
+        System.out.print(CC.YELLOW_BRIGHT+"\nWhat year do you want to check? ");
         int yearCheck = scan.nextInt();
 
         for(int i=0; i<years.length; i++){
             if(years[i] == yearCheck){
-                System.out.printf(ConsoleColors.GREEN_BRIGHT+"Fount it it is in index %d 😀\n", i);
+                System.out.printf(CC.GREEN_BRIGHT+"Fount it it is in index %d 😀\n", i);
             }else{
-                System.out.printf(ConsoleColors.RED_BRIGHT+"The Year %d is not found in the array ☹️", yearCheck );
+                System.out.printf(CC.RED_BRIGHT+"The Year %d is not found in the array ☹️", yearCheck );
                 break;
             }
         }
@@ -90,7 +90,7 @@ public class ArraysPractice {
         for (int i = 0; i < array1.length; i++) {
             for (int j = 0; j < array2.length; j++) {
                 if (array1[i] == array2[j]) {
-                    System.out.printf(ConsoleColors.YELLOW_BRIGHT+"The number %s at array1 index %s matches the number %s at array2 index %s\n",  array1[i], i, array2[j],j);
+                    System.out.printf(CC.YELLOW_BRIGHT+"The number %s at array1 index %s matches the number %s at array2 index %s\n",  array1[i], i, array2[j],j);
                 }
             }
         }
@@ -99,33 +99,33 @@ public class ArraysPractice {
     public static void sortPrint(){
         int[] array = {4,16,3,11,21,46,34,57};
 
-        System.out.println(ConsoleColors.YELLOW+"The Original Array "+Arrays.toString(array));
+        System.out.println(CC.YELLOW+"The Original Array "+Arrays.toString(array));
         Arrays.sort(array);
-        System.out.println(ConsoleColors.GREEN_BRIGHT+"The Sorted Array "+Arrays.toString(array));
+        System.out.println(CC.GREEN_BRIGHT+"The Sorted Array "+Arrays.toString(array));
 
     }
 
     public static void sortPrintFromUser(){
         Scanner scan = new Scanner(System.in);
-        System.out.print(ConsoleColors.YELLOW_BRIGHT+"\nEnter the length of the array.. ");
+        System.out.print(CC.YELLOW_BRIGHT+"\nEnter the length of the array.. ");
         int length = getInt(scan);
 
         int[] array = new int[length];
 
         for (int i=0; i< array.length; i++){
-            System.out.printf(ConsoleColors.YELLOW_BOLD_BRIGHT+"\nEnter element %d of your array... ", i+1);
+            System.out.printf(CC.YELLOW_BOLD_BRIGHT+"\nEnter element %d of your array... ", i+1);
             array[i] = getInt(scan);
         }
 
-        System.out.println(ConsoleColors.YELLOW+"\nThe Original Array "+Arrays.toString(array));
+        System.out.println(CC.YELLOW+"\nThe Original Array "+Arrays.toString(array));
         Arrays.sort(array);
-        System.out.println(ConsoleColors.GREEN_BRIGHT+"\nThe Sorted Array "+Arrays.toString(array));
+        System.out.println(CC.GREEN_BRIGHT+"\nThe Sorted Array "+Arrays.toString(array));
 
     }
 
     private static int getInt(Scanner scan){
         while (!scan.hasNextInt()){
-            System.out.print(ConsoleColors.RED_BOLD_BRIGHT+"\n ⛔️ Invalid, the Passcode Must Be a Numbers\n"+ ConsoleColors.YELLOW_BRIGHT + "\n 🔒Try Again! : ");
+            System.out.print(CC.RED_BOLD_BRIGHT+"\n ⛔️ Invalid, the Passcode Must Be a Numbers\n"+ CC.YELLOW_BRIGHT + "\n 🔒Try Again! : ");
             scan.next();
         }
         return scan.nextInt();

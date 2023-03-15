@@ -9,15 +9,15 @@ public class While {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.print(ConsoleColors.WHITE_BOLD_BRIGHT + "\n\n ⚪️ Try Again? < Yes / No > ");
+            System.out.print(CC.WHITE_BOLD_BRIGHT + "\n\n ⚪️ Try Again? < Yes / No > ");
             String Option = scanner.next().toLowerCase().trim().strip();
             if (Option.equals("yes")) {
                 break;
             } else if (Option.equals("no")) {
-                System.out.println(ConsoleColors.CYAN_BOLD_BRIGHT + "\n 🎣 Quitting");
+                System.out.println(CC.CYAN_BOLD_BRIGHT + "\n 🎣 Quitting");
                 System.exit(0);
             } else {
-                System.out.println(ConsoleColors.RED_BOLD_BRIGHT + " ⛔️ Error - \"" + Option + "\" Not Fount! ");
+                System.out.println(CC.RED_BOLD_BRIGHT + " ⛔️ Error - \"" + Option + "\" Not Fount! ");
             }
         }
     }
@@ -30,7 +30,7 @@ public class While {
     public static String getStringScanOnly(Scanner scan) {
         String input = scan.next();
         while (!input.matches("^[a-zA-Z]+$")) {
-            System.out.print(ConsoleColors.RED_BOLD_BRIGHT + "\t⛔️ Invalid Input, Please enter a String Value: "+ ConsoleColors.RESET);
+            System.out.print(CC.RED_BOLD_BRIGHT + "\t⛔️ Invalid Input, Please enter a String Value: "+ CC.RESET);
             input = scan.next();
         }
         return input;
@@ -38,7 +38,7 @@ public class While {
 
     public static int getIntegerScanOnly(Scanner scan) {
         while (!scan.hasNextInt()) {
-            System.out.print(ConsoleColors.RED_BOLD_BRIGHT + "\t⛔️ Invalid Input, Please enter an Integer Value: "+ ConsoleColors.RESET);
+            System.out.print(CC.RED_BOLD_BRIGHT + "\t⛔️ Invalid Input, Please enter an Integer Value: "+ CC.RESET);
             scan.next();
         }
         return scan.nextInt();
@@ -46,7 +46,7 @@ public class While {
 
     public static double getDoubleScanOnly(Scanner scan){
         while (!scan.hasNextDouble()) {
-            System.out.print(ConsoleColors.RED_BOLD_BRIGHT + "\t⛔️ Invalid Input, Please enter a Integer or Double value: "+ ConsoleColors.RESET);
+            System.out.print(CC.RED_BOLD_BRIGHT + "\t⛔️ Invalid Input, Please enter a Integer or Double value: "+ CC.RESET);
             scan.next();
         }
         return scan.nextDouble();

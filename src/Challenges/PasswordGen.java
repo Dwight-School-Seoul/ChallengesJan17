@@ -13,24 +13,24 @@ public class PasswordGen {
 
         while (true) {
 
-            System.out.print(ConsoleColors.YELLOW_BRIGHT+"\n 🔐 Enter the length of the password? ");
+            System.out.print(CC.YELLOW_BRIGHT+"\n 🔐 Enter the length of the password? ");
             int passwordLength = getScan(scan);
 
-            System.out.print(ConsoleColors.YELLOW_BRIGHT+"\n ⚒️ How many special characters? ");
+            System.out.print(CC.YELLOW_BRIGHT+"\n ⚒️ How many special characters? ");
             int specialCharCount = getScan(scan);
 
-            System.out.print(ConsoleColors.YELLOW_BRIGHT+"\n ⚙️ How many numbers? ");
+            System.out.print(CC.YELLOW_BRIGHT+"\n ⚙️ How many numbers? ");
             int numCount = getScan(scan);
 
             int total = passwordLength - specialCharCount - numCount;
 
             if (total < 0) {
-                System.out.println(ConsoleColors.RED_BOLD_BRIGHT+"\n ⛔️ ERROR - The length of the password should be higher than 0.");
+                System.out.println(CC.RED_BOLD_BRIGHT+"\n ⛔️ ERROR - The length of the password should be higher than 0.");
                 if(specialCharCount > passwordLength){
-                    System.out.println(ConsoleColors.RED_BOLD_BRIGHT+" ⛔️ ERROR - The length of the " + ConsoleColors.YELLOW_BRIGHT +"special characters" + ConsoleColors.RED_BOLD_BRIGHT+ " should be less that The Password Length.");
+                    System.out.println(CC.RED_BOLD_BRIGHT+" ⛔️ ERROR - The length of the " + CC.YELLOW_BRIGHT +"special characters" + CC.RED_BOLD_BRIGHT+ " should be less that The Password Length.");
                 }
                 if (numCount > passwordLength){
-                    System.out.println(ConsoleColors.RED_BOLD_BRIGHT+" ⛔️ ERROR - The length of the " + ConsoleColors.YELLOW_BRIGHT +"Numbers" + ConsoleColors.RED_BOLD_BRIGHT+ " should be less that The Password Length.");
+                    System.out.println(CC.RED_BOLD_BRIGHT+" ⛔️ ERROR - The length of the " + CC.YELLOW_BRIGHT +"Numbers" + CC.RED_BOLD_BRIGHT+ " should be less that The Password Length.");
                 }
                 return;
             }
@@ -51,14 +51,14 @@ public class PasswordGen {
             randomizeString(shufflePassword);
             String finalPassword =  new String(shufflePassword);
 
-            System.out.println(ConsoleColors.GREEN_BOLD_BRIGHT+"\n 🔑 Your Generated password is: " + ConsoleColors.RESET+ finalPassword);
+            System.out.println(CC.GREEN_BOLD_BRIGHT+"\n 🔑 Your Generated password is: " + CC.RESET+ finalPassword);
 
             While.again();
         }
     }
     private static int getScan(Scanner scan){
         while (!scan.hasNextInt()){
-            System.out.print(ConsoleColors.RED_BOLD_BRIGHT+"\n ⛔️ Invalid Input, Must Be Numbers,"+ ConsoleColors.YELLOW_BRIGHT+" Try Again!: ");
+            System.out.print(CC.RED_BOLD_BRIGHT+"\n ⛔️ Invalid Input, Must Be Numbers,"+ CC.YELLOW_BRIGHT+" Try Again!: ");
             scan.next();
         }
         return scan.nextInt();
