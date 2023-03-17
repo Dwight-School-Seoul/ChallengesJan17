@@ -1,7 +1,7 @@
 package Project1;
 
-class SavingsAccount extends Account {
-    private final double interestRate;
+public class SavingsAccount extends Account {
+    private double interestRate;
 
     public SavingsAccount(int accountNumber, double balance, String ownerName, double interestRate) {
         super(accountNumber, balance, ownerName);
