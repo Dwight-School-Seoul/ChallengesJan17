@@ -30,7 +30,7 @@ public class Bank {
     }
 
     public void ShowBalance(){
-        System.out.printf(CC.GREEN_BOLD_BRIGHT+"\nYour DataBase.Bank Account Balance is: $%.3f\n",balance);
+        System.out.printf(CC.GREEN_BOLD_BRIGHT+"\nYour Bank Account Balance is: $%.3f\n",balance);
     }
 
     public void withdraw(double amount) {
@@ -91,10 +91,10 @@ public class Bank {
             double amount;
             Bank bank;
 
-            System.out.println(CC.CYAN_BOLD_BRIGHT+"\n------------{ John's DataBase.Bank For Foreigners }------------\n"+ CC.RESET);
+            System.out.println(CC.CYAN_BOLD_BRIGHT+"\n------------{ John's Bank For Foreigners }------------\n"+ CC.RESET);
 
             while(true){
-                System.out.println(CC.CYAN_BOLD_BRIGHT+"\n--------{ CSVFilePractice.CSVFilePractice Menu }--------"+ CC.RESET);
+                System.out.println(CC.CYAN_BOLD_BRIGHT+"\n--------{ Menu }--------"+ CC.RESET);
                 System.out.println("\n1. Create a bank account.");
                 System.out.println("2. Login to a bank account.");
                 System.out.print(CC.YELLOW_BRIGHT+"\n> Choose an option (1 or 2): "+ CC.RESET);
@@ -103,7 +103,7 @@ public class Bank {
                 CreateAccount:
                 if(ch.equals("1") || ch.equals("2")) {
                     if(ch.equals("1")){
-                        System.out.println("\nCreating your DataBase.Bank Account:");
+                        System.out.println("\nCreating your Bank Account:");
 
                         System.out.print("\tEnter your username: ");
                         String username = While.getStringScanOnly(scan);
@@ -132,7 +132,7 @@ public class Bank {
 
                         prepareStatement.executeUpdate();
 
-                        System.out.println(CC.GREEN_BRIGHT+"\nYou have Successfully Created a DataBase.Bank Account "+ CC.RESET);
+                        System.out.println(CC.GREEN_BRIGHT+"\nYou have Successfully Created a Bank Account "+ CC.RESET);
 
                     } else {
                         loop2:
@@ -194,7 +194,7 @@ public class Bank {
                                 }
                             } else {
                                 System.out.println(CC.RED_BRIGHT+"\nIncorrect username or passcode."+ CC.RESET);
-                                System.out.println(CC.BLUE_BRIGHT+"\t 1. Return to CSVFilePractice.CSVFilePractice Menu. ");
+                                System.out.println(CC.BLUE_BRIGHT+"\t 1. Return to Menu. ");
                                 System.out.println(CC.BLUE_BRIGHT+"\t 2. Try Again!"+ CC.RESET);
                                 System.out.print(CC.YELLOW_BRIGHT+"\n> Choose an option (1 or 2): "+ CC.RESET);
 

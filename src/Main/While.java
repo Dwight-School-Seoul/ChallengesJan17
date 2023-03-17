@@ -1,7 +1,6 @@
 package Main;
 
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 public class While {
 

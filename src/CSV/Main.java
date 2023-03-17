@@ -28,7 +28,7 @@ public class Main {
 
         }catch (Exception e){
             e.printStackTrace();
-        } finally {
+        }finally {
             System.out.println(CC.BLUE+"\nThanks! ");
         }
 
