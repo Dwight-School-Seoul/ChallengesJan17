@@ -43,12 +43,31 @@ public class While {
         return scan.nextInt();
     }
 
+    public static char getCharacterScanOnly(Scanner scan) {
+        while (!scan.hasNext("[a-zA-Z]")) {
+            System.out.print(CC.RED_BOLD_BRIGHT + "\t⛔️ Invalid Input, Please enter a Character Value: " + CC.RESET);
+            scan.nextLine();
+        }
+        return scan.next().charAt(0);
+    }
+
+
     public static double getDoubleScanOnly(Scanner scan){
         while (!scan.hasNextDouble()) {
             System.out.print(CC.RED_BOLD_BRIGHT + "\t⛔️ Invalid Input, Please enter a Integer or Double value: "+ CC.RESET);
             scan.next();
         }
         return scan.nextDouble();
+    }
+
+    public static String getSentenceStringScanOnly(Scanner scan) {
+        String input = scan.nextLine();
+        while (!input.matches("^[a-zA-Z\\s]+$")) {
+            System.out.print(CC.RED_BOLD_BRIGHT + "\t⛔️ Invalid Input, Please enter a String Value: "+ CC.RESET);
+            input = scan.nextLine();
+
+        }
+        return input;
     }
 
     public static void randomizeString(char[] input) {
