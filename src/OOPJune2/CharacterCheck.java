@@ -7,7 +7,7 @@ public class CharacterCheck {
     private static final Scanner scan = new Scanner(System.in);
 
 
-    public static void main(String[] args){
+    public static void main(){
 
        while (true){
            System.out.printf(" \n\t > %sEnter a Word: %s", CC.YELLOW_BRIGHT, CC.RESET);

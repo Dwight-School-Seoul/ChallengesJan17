@@ -6,7 +6,7 @@ public class WordCount {
 
     private static final Scanner scan = new Scanner(System.in);
 
-    public static void main(String[] args){
+    public static void main(){
 
         System.out.printf("\n\t > %s Enter a sentence: %s", CC.YELLOW_BRIGHT, CC.RESET);
         String sentence = While.getSentenceStringScanOnly(scan);

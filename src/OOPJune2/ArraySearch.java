@@ -6,7 +6,7 @@ public class ArraySearch {
 
     private static final Scanner scan = new Scanner(System.in);
 
-    public static void main(String[] args){
+    public static void main(){
 
        while (true){
            int[] numbers = {10, 20, 30, 40, 50};

@@ -6,7 +6,7 @@ public class FibonacciSeries {
 
     private static final Scanner scan = new Scanner(System.in);
 
-    public static void main(String[] args){
+    public static void main(){
 
         while(true){
             System.out.printf("\n >%s Enter the number of terms:%s ", CC.YELLOW_BRIGHT, CC.RESET);

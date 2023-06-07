@@ -8,7 +8,7 @@ public class CountVowelsAndConsonants {
     private static int vowels;
     private static int consonants;
 
-    public static void main(String[] args){
+    public static void main(){
 
         while(true){
             System.out.printf("\n\t > %sEnter a string: %s",CC.YELLOW_BRIGHT, CC.RESET);
