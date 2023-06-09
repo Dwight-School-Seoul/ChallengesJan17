@@ -19,7 +19,18 @@ public class LeapYear {
                System.out.printf(" \n\t> %s%s%s is not a leap year.%s", CC.YELLOW_BRIGHT, year, CC.RED_BRIGHT, CC.RESET);
            }
 
-           While.again();
+           while (true) {
+               System.out.print(CC.WHITE_BOLD_BRIGHT + "\n\n ⚪️ Try Again? < Yes / No > ");
+               String Option = scan.next().toLowerCase().trim().strip();
+               if (Option.equals("yes")) {
+                   break;
+               } else if (Option.equals("no")) {
+                   return;
+               } else {
+                   System.out.println(CC.RED_BOLD_BRIGHT + " ⛔️ Error - \"" + Option + "\" Not Fount! ");
+               }
+           }
+
        }
 
     }

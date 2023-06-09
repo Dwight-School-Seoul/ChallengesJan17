@@ -37,7 +37,6 @@ public class Rectangle {
         return 2 * (length + width);
     }
 
-
     public static void main(){
 
        while (true){
@@ -54,7 +53,18 @@ public class Rectangle {
 
            System.out.printf(" \n\t > Area: %s%s%s ", CC.GREEN_BRIGHT, area, CC.RESET);
            System.out.printf(" \n\t > Perimeter: %s%s%S",CC.GREEN_BRIGHT, perimeter, CC.RESET);
-           While.again();
+
+           while (true) {
+               System.out.print(CC.WHITE_BOLD_BRIGHT + "\n\n ⚪️ Try Again? < Yes / No > ");
+               String Option = scan.next().toLowerCase().trim().strip();
+               if (Option.equals("yes")) {
+                   break;
+               } else if (Option.equals("no")) {
+                   return;
+               } else {
+                   System.out.println(CC.RED_BOLD_BRIGHT + " ⛔️ Error - \"" + Option + "\" Not Fount! ");
+               }
+           }
        }
 
     }

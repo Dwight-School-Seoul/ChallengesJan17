@@ -24,7 +24,18 @@ public class ArraySum {
 
             double sum = calculateSum(numbers);
             System.out.printf(" \n\t > %sThe Average of the Array is %s%s%s", CC.YELLOW_BRIGHT, CC.GREEN_BRIGHT, sum, CC.RESET);
-            While.again();
+
+            while (true) {
+                System.out.print(CC.WHITE_BOLD_BRIGHT + "\n\n ⚪️ Try Again? < Yes / No > ");
+                String Option = scan.next().toLowerCase().trim().strip();
+                if (Option.equals("yes")) {
+                    break;
+                } else if (Option.equals("no")) {
+                    return;
+                } else {
+                    System.out.println(CC.RED_BOLD_BRIGHT + " ⛔️ Error - \"" + Option + "\" Not Fount! ");
+                }
+            }
         }
 
     }

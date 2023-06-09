@@ -21,7 +21,17 @@ public class CharacterCheck {
            System.out.printf(" \n\t > %sWord: %s%s%s", CC.YELLOW_BRIGHT, CC.GREEN_BRIGHT, word, CC.RESET);
            System.out.printf("\n\t > %sThe Number of \"%s%s%s\" occurs in the Word: %s%s%s", CC.YELLOW_BRIGHT, CC.GREEN_BRIGHT, character, CC.YELLOW_BRIGHT, CC.GREEN_BRIGHT, charCount, CC.RESET);
 
-           While.again();
+           while (true) {
+               System.out.print(CC.WHITE_BOLD_BRIGHT + "\n\n ⚪️ Try Again? < Yes / No > ");
+               String Option = scan.next().toLowerCase().trim().strip();
+               if (Option.equals("yes")) {
+                   break;
+               } else if (Option.equals("no")) {
+                   return;
+               } else {
+                   System.out.println(CC.RED_BOLD_BRIGHT + " ⛔️ Error - \"" + Option + "\" Not Fount! ");
+               }
+           }
        }
     }
     private static int countOccurrences(String word, char character) {

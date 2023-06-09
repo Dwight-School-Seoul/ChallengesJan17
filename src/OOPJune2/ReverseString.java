@@ -10,11 +10,22 @@ public class ReverseString {
 
         while (true){
             System.out.printf("\n\t >%s Enter a string: %s", CC.YELLOW_BRIGHT, CC.RESET);
-            String input = While.getStringScanOnly(scan);
+            String input = While.getSentenceStringScanOnly(scan);
 
             String reversed = reverseString(input);
             System.out.printf("\n\t > %sReversed string: %s%s%s", CC.YELLOW_BRIGHT,CC.GREEN_BRIGHT, reversed, CC.RESET);
-            While.again();
+
+            while (true) {
+                System.out.print(CC.WHITE_BOLD_BRIGHT + "\n\n ⚪️ Try Again? < Yes / No > ");
+                String Option = scan.next().toLowerCase().trim().strip();
+                if (Option.equals("yes")) {
+                    break;
+                } else if (Option.equals("no")) {
+                    return;
+                } else {
+                    System.out.println(CC.RED_BOLD_BRIGHT + " ⛔️ Error - \"" + Option + "\" Not Fount! ");
+                }
+            }
         }
 
     }

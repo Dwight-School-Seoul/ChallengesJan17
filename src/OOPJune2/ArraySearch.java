@@ -20,7 +20,17 @@ public class ArraySearch {
            } else {
                System.out.printf("\n\t > %sElement %s" + element + "%s not found in the array.%s", CC.YELLOW_BRIGHT, CC.RED_BOLD_BRIGHT, CC.YELLOW_BRIGHT, CC.RESET);
            }
-           While.again();
+           while (true) {
+               System.out.print(CC.WHITE_BOLD_BRIGHT + "\n\n ⚪️ Try Again? < Yes / No > ");
+               String Option = scan.next().toLowerCase().trim().strip();
+               if (Option.equals("yes")) {
+                   break;
+               } else if (Option.equals("no")) {
+                  return;
+               } else {
+                   System.out.println(CC.RED_BOLD_BRIGHT + " ⛔️ Error - \"" + Option + "\" Not Fount! ");
+               }
+           }
        }
     }
 
@@ -32,4 +42,6 @@ public class ArraySearch {
         }
         return -1;
     }
+
+
 }
